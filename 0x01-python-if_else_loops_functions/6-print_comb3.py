@@ -2,8 +2,8 @@
 for i in range(10):
     for j in range(i + 1, 10):
         if i != j:
-            print(i, end="")
+            print("{:d}".format(i), end="")
             if i == 8 and j == 9:
-                print(j)
+                print("{:d}".format(j))
             else:
-                print(j, end=", ")
+                print("{:d}".format(j), end=", ")
