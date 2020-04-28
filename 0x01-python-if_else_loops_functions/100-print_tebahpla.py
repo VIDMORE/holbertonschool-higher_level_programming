@@ -2,4 +2,4 @@
 for alpha in range(122, 96, -1):
     if alpha % 2 == 1:
         alpha -= 32
-    print("{:c}".format(chr(alpha)), end="")
+    print("{}".format(chr(alpha)), end="")
