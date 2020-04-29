@@ -10,21 +10,24 @@
 listint_t *insert_node(listint_t **head, int number)
 {
 	listint_t *temporal = *head;
-	unsigned int i = 0;
+	unsigned int i = 0, flag = 0;
 
 	while (temporal)
 	{
 		if (temporal->n < number && temporal->next->n > number)
 		{
 			i++;
+			flag = 1;
 			break;
 		}
 
 		i++;
 		temporal = temporal->next;
 	}
+	if (flag == 1)
+		return (insert_nodeint_at_index(head, i, number));
 
-	return (insert_nodeint_at_index(head, i, number));
+	return (*head);
 }
 
 /**
