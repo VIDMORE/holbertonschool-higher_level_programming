@@ -11,6 +11,9 @@ int is_palindrome(listint_t **head)
 	int counter = 0;
 	dlistint_t *new, *copy;
 
+	if (head == NULL || *head == NULL || (*head)->next == NULL)
+		return (1);
+
 	while ((*head))
 	{
 		add_dnodeint_end(&new, (*head)->n);
