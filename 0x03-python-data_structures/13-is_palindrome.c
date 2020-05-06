@@ -15,9 +15,10 @@ int is_palindrome(listint_t **head)
 }
 
 /**
- * is_palindrome - is_palindrome
- * @head: head
- * Return: return
+ * equal - validates if palindrome
+ * @first: always points to head
+ * @last: last item of the list
+ * Return: 1
  */
 
 int equal(listint_t **first, listint_t *last)
@@ -27,7 +28,6 @@ int equal(listint_t **first, listint_t *last)
 
 	if (equal(first, last->next))
 	{
-		
 		if ((*first)->n == last->n)
 		{
 			*first = (*first)->next;
