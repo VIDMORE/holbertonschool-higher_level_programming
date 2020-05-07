@@ -8,7 +8,7 @@ def roman_to_int(roman_string):
         for letter in roman_string:
             if letter in roman_string:
                 if prev != 0 and prev < roman[letter]:
-                    vals = roman[letter] - prev
+                    vals += roman[letter] - prev - prev
                 else:
                     vals += roman[letter]
                 prev = roman[letter]   
