@@ -13,6 +13,11 @@ class Node:
             data: data for __data attribute
             next_node: the address of the next node
         """
+        if type(data) is not int:
+            raise TypeError("data must be an integer")
+        if type(next_node) is not Node and next_node is not None:
+            raise TypeError("next_node must be a Node object")
+
         self.__data = data
         self.__next_node = next_node
 
