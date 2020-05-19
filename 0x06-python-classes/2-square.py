@@ -1,7 +1,17 @@
 #!/usr/bin/python3
-class Square:
+"""This module creates a Class Square"""
 
-    def __init__(self, size = 0):
+
+class Square:
+    """ Class Square with a constuctor method"""
+
+    def __init__(self, size=0):
+        """
+        Initializes square
+
+        Args:
+            size: size for __size attribute
+        """
 
         if type(size) is not int:
             raise TypeError("size must be an integer")
