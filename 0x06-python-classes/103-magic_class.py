@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""This module was created with a bytecode"""
 import math
 
 
