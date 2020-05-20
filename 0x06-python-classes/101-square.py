@@ -73,7 +73,7 @@ class Square:
                 if i < self.__size - 1:
                     square_str += "\n"
         else:
-            square_str += "\n"
+            square_str += ""
         return square_str
 
     @property
