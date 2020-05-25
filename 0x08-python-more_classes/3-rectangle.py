@@ -24,6 +24,7 @@ class Rectangle:
         Returns:
             The height of the rectangle
         """
+
         return self.__height
 
     @height.setter
@@ -34,6 +35,7 @@ class Rectangle:
         Args:
             value: value for __height attribute
         """
+
         if type(value) != int:
             raise TypeError("height must be an integer")
         if value < 0:
@@ -49,6 +51,7 @@ class Rectangle:
         Returns:
             The width of the rectangle
         """
+
         return self.__width
 
     @width.setter
@@ -87,10 +90,11 @@ class Rectangle:
         """
 
         string = ""
-        if self.__width != 0 or self.__height != 0:
-            for row in range(self.__height):
-                for _ in range(self.__width):
-                    string += "#"
-                if row < self.__height - 1:
-                    string += "\n"
+        if self.__width == 0 or self.__height == 0:
+            return string
+        for row in range(self.__height):
+            for _ in range(self.__width):
+                string += "#"
+            if row < self.__height - 1:
+                string += "\n"
         return string
