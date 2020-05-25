@@ -5,7 +5,7 @@
 class Rectangle:
     """
     Class that builds a rectangle
-    
+
     Attributes:
         number_of_instances (int): The number of Rectangle instances.
     """
