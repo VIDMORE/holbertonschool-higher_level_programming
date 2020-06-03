@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """This module defines the functions for the pascal triangle"""
 
+
 def pascal_triangle(n):
     """
     Gets each row and appends to the triangle
