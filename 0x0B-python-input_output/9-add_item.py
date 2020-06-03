@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""This module defines a script that adds all arguments to a Python list"""
+
+
 from sys import argv
 import os.path
 

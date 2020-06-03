@@ -26,6 +26,3 @@ class Student:
             return new_dic
         else:
             return self.__dict__
-
-    def reload_from_json(self, json):
-        """Replaces all attributes of a Student instance"""

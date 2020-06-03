@@ -4,7 +4,7 @@
 
 class Student:
     """
-    A class named Student
+    A class Student
 
     """
 

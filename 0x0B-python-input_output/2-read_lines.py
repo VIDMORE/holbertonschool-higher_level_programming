@@ -1,6 +1,15 @@
 #!/usr/bin/python3
-def read_lines(filename="", nb_lines=0):
+"""This module defines the function read_lines"""
 
+
+def read_lines(filename="", nb_lines=0):
+    """
+    Reads n lines of a text file (UTF8) and prints it to stdout
+
+    Args:
+        filename (str): Filename
+        nb_lines (int): number of lines
+    """
     counter = 0
 
     with open(filename, 'r', encoding="utf-8") as file:
