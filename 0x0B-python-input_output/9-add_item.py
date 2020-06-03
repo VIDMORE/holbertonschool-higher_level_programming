@@ -18,5 +18,7 @@ if os.path.exists(file_name) is False:
 # Bringing the list from the file
 new_list = load_from_json_file(file_name)
 
-new_list.append(argv[1:])
+for i in range(1, len(argv)):
+    new_list.append(argv[i])
+
 save_to_json_file(new_list, file_name)
