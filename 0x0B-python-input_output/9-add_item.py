@@ -11,7 +11,7 @@ load_from_json_file = __import__('8-load_from_json_file').load_from_json_file
 new_list = []
 file_name = "add_item.json"
 
-if not os.path.exists(file_name):
+if not path.exists(file_name):
     save_to_json_file(new_list, file_name)
 
 new_list = load_from_json_file(file_name)
