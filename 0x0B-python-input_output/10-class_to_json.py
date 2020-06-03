@@ -2,9 +2,6 @@
 """This module creates the function class_to_json"""
 
 
-import json
-
-
 def class_to_json(obj):
     """
     Returns the dictionary description of object
@@ -16,4 +13,4 @@ def class_to_json(obj):
         dictionary
     """
 
-    return json.loads((json.dumps(obj.__dict__)))
+    return obj.__dict__
