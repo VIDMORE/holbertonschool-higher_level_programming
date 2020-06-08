@@ -55,7 +55,7 @@ class TestBaseClass(unittest.TestCase):
     def test_from_json_string(self):
         """Test to check from_json_string function"""
 
-        self.assertEqual(Base.from_json_string([]), [])
+        self.assertEqual(Base.from_json_string("[]"), [])
         self.assertEqual(Base.from_json_string(None), [])
 
     @classmethod
