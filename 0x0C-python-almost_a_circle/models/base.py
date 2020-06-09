@@ -66,25 +66,32 @@ class Base:
         """Returns an instance with all attributes already set"""
 
         if cls.__name__ == "Rectangle":
-            dummy = cls(1, 2)
-            dummy.update(**dictionary)
-            return dummy
+            object = cls(1, 1)
+            object.update(**dictionary)
+            return object
+
+        if cls.__name__ == "Square":
+            object = cls(1)
+            object.update(**dictionary)
+            return object
 
     @classmethod
     def load_from_file(cls):
         """Returns a list of instances"""
 
-        obj_list = []
         instance_list = []
 
         if not path.exists(cls.__name__ + ".json"):
-            return obj_list
+            return []
         else:
-            with open(cls.__name__ + ".json", encoding="utf-8") as file:
-                obj_list = cls.from_json_string(file.read())
-                for dic in obj_list:
-                    instance_list.append(cls.create(**dic))
-            return instance_list
+            with open(cls.__name__ + ".json", "r",  encoding='utf-8') as file:
+                objectlist = cls.from_json_string(file.read())
+                for dict in objectlist:
+                    objectdict = {}
+                    for key, value in dict.items():
+                        objectdict[key] = value
+                    instance_list.append(cls.create(**objectdict))
+                return instance_list
 
     @classmethod
     def save_to_file_csv(cls, list_objs):

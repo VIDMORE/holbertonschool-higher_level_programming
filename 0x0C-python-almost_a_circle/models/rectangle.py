@@ -144,10 +144,9 @@ class Rectangle(Base):
     def to_dictionary(self):
         """Returns the dictionary representation of a Rectangle"""
 
-        dict_repre = {}
-        props = ["id", "width", "height", "x", "y"]
-        i = 0
-        for key in self.__dict__:
-            dict_repre[props[i]] = self.__dict__[key]
-            i += 1
-        return dict_repre
+        olddict = self.__dict__.copy()
+        newdict = {}
+        for i in olddict:
+            newkey = i.replace('_Rectangle__', "")
+            newdict[newkey] = self.__dict__[i]
+        return newdict
