@@ -97,35 +97,32 @@ class Base:
     def save_to_file_csv(cls, list_objs):
         """Writes the CSV string representation of list_objs to a file"""
 
-        if cls.__name__ == "Rectangle":
-            fieldnames = ['id', 'width', 'height', 'x', 'y']
-        elif cls.__name__ == "Square":
-            fieldnames = ['id', 'size', 'x', 'y']
+        with open(cls.__name__ + ".csv", "w", newline='') as f:
+            if cls.__name__ == "Rectangle":
+                fieldnames = ['id', 'width', 'height', 'x', 'y']
+            elif cls.__name__ == "Square":
+                fieldnames = ['id', 'size', 'x', 'y']
 
-        with open(cls.__name__ + ".csv", 'w', encoding="utf-8") as csvfile:
-            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+            writer = csv.DictWriter(f, fieldnames=fieldnames)
             writer.writeheader()
-
             if list_objs is not None:
-                for obj in list_objs:
-                    writer.writerow(obj.to_dictionary())
+                for model in list_objs:
+                    writer.writerow(model.to_dictionary())
 
     @classmethod
     def load_from_file_csv(cls):
         """Returns a list of instances"""
 
-        instance_list = []
-
-        if not path.exists(cls.__name__ + ".csv"):
+        if path.exists(cls.__name__ + ".csv") is False:
             return []
-        else:
-            with open(cls.__name__ + ".csv", encoding="utf-8") as csvfile:
-                reader = csv.DictReader(csvfile)
-                for row in reader:
-                    for key, value in row.items():
-                        row[key] = int(value)
-                    instance_list.append(cls.create(**row))
-            return instance_list
+        with open(cls.__name__ + ".csv", "r", newline='') as f:
+            listofinstances = []
+            reader = csv.DictReader(f)
+            for row in reader:
+                for key, value in row.items():
+                    row[key] = int(value)
+                listofinstances.append(cls.create(**row))
+        return listofinstances
 
     @staticmethod
     def draw(list_rectangles, list_squares):
