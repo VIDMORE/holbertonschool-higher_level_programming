@@ -11,14 +11,12 @@ if __name__ == "__main__":
     database = argv[3]
     name = argv[4]
 
-    query = "SELECT * from states\
-                WHERE name LIKE '{}' ORDER BY states.id".format(name)
-
     db = MySQLdb.connect(host="localhost", port=3306, user=user,
                          passwd=passw, db=database)
 
     cur = db.cursor()
-    cur.execute(query)
+    cur.execute("SELECT * from states\
+                WHERE name = '{}' ORDER BY id".format(name))
     rows = cur.fetchall()
     for row in rows:
         print(row)
