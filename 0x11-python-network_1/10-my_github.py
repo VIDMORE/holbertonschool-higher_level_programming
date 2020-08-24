@@ -11,6 +11,6 @@ if __name__ == "__main__":
     try:
         req = requests.get('https://api.github.com/user', auth=(
             argv[1], argv[2])).json()
-        print(r.get('id'))
+        print(req.get('id'))
     except:
         print("None")
