@@ -1,3 +1,6 @@
+#!/usr/bin/python3
+"""This modules defines a task"""
+
 import requests
 from sys import argv
 
